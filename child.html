@@ -31,8 +31,7 @@
 	</style>
 </head>
 <body>
-<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
-<script src="js/child.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="js/respimage.js"></script>
 <script>
 	var params = {};
@@ -42,7 +41,8 @@
 			param = param.split('=');
 			params[param[0]] = param[1] || '';
 		});
-		['tLazy', 'xQuant', 'tHigh', 'greed', 'tLow'].forEach(function(cfg){
+		respimage.config('tLazy', 0);
+		['xQuant', 'tHigh', 'greed', 'tLow'].forEach(function(cfg){
 			if(params[cfg]){
 				respimage.config(cfg, params[cfg]);
 			}
